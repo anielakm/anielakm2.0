@@ -107,6 +107,7 @@ class IndexPage extends React.Component {
   }
   handleFormMessageClose = () => {
     document.querySelector('#form-message').classList.remove("active-message");
+
   }
 
   handleLang = (lang) => {

@@ -160,6 +160,13 @@ class Form extends React.Component {
 
     handleOpen = () => {
         this.props.handleMessage('success');
+        this.state({
+            name: '',
+            email: '',
+            subject: '',
+            firm: '',
+            message: ''
+        })
     }
     handleRecError = () => {
         this.props.handleMessage('error');
