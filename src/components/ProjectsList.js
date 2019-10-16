@@ -62,6 +62,10 @@ letter-spacing:1px;
 
 .project-container{
 
+
+
+
+    display:flex;
     background-color:white;
     width:96%;
     height:92%;
@@ -72,11 +76,18 @@ letter-spacing:1px;
     z-index:999;
     position:absolute;
     opacity:0;
-    display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding:10%;
+    
+
+    @media(min-width:768px){
+        padding: 4% 6%;
+    }
+
+    @media(min-width:1220px){
+        padding:10%;
+    }
 
     transition: 1s opacity;
     -webkit-transition: 1s opacity;
@@ -86,8 +97,18 @@ letter-spacing:1px;
     text-align: left;
     width:100%;
 
+    @media(min-width:768px){
+        font-size: 12px;
+        margin-bottom:1%;
+
+    }
+
     @media(min-width:1220px){
         padding-right:20%;
+        font-size: 16px;
+    }
+    @media(min-width:1440px){
+        font-size: 18px;
     }
     }
     p{
@@ -98,12 +119,22 @@ letter-spacing:1px;
     text-align: left;
     letter-spacing:1px;
 
-    @media(min-width:1220px){
-        padding-right:20%;
-    }
+    @media(min-width:768px){
+        font-size: 9px;
+        line-height:12px;
     }
 
-    
+    @media(min-width:1220px){
+        padding-right:20%;
+        font-size: 10px;
+        line-height:14px;
+    }
+
+
+    @media(min-width:1440px){
+        font-size: 12px;
+    }
+    }
 
     .button-container{
         text-align:left;
@@ -115,13 +146,14 @@ letter-spacing:1px;
 
     }
 
-
-.gatsby-image-wrapper:hover{
+@media(min-width:768px){
+    .gatsby-image-wrapper:hover{
     .project-container{
         opacity:.95;
-
     }
 }
+}
+
 
 `;
 
