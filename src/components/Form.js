@@ -46,6 +46,12 @@ input{
         display:none;
     }
 
+   &:-internal-autofill-selected{
+        background-color:${theme.colors.pistachio};
+        opacity:0.5;
+        color:black;
+    }
+
    @media(min-width:768px){
        width:48%;
        margin: 0 1%;
@@ -153,10 +159,10 @@ class Form extends React.Component {
 
 
     handleOpen = () => {
-        console.log('success')
+        this.props.handleMessage('success');
     }
     handleRecError = () => {
-        console.log('error')
+        this.props.handleMessage('error');
     }
 
 
@@ -172,11 +178,11 @@ class Form extends React.Component {
                 data-netlify-honeypot="bot-field"
             >
                 <input type="hidden" name="form-name" value="contact" />
-                <input name="name" onChange={this.handleForm} type="text" value={this.state.name} placeholder={lang === "pl" ? "* Imię" : "* Name"} />
-                <input name="email" onChange={this.handleForm} type="email" value={this.state.email} placeholder="* E-mail" />
+                <input name="name" onChange={this.handleForm} type="text" value={this.state.name} placeholder={lang === "pl" ? "* Imię" : "* Name"} required />
+                <input name="email" onChange={this.handleForm} type="email" value={this.state.email} placeholder="* E-mail" required />
                 <input name="subject" onChange={this.handleForm} type="text" value={this.state.subject} placeholder={lang === 'pl' ? "Temat" : "Subject"} />
                 <input name="firm" id="desktop" onChange={this.handleForm} value={this.state.firm} type="text" placeholder={lang === 'pl' ? "Firma" : "Firm"} />
-                <textarea name="message" onChange={this.handleForm} value={this.state.text} placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10"></textarea>
+                <textarea name="message" onChange={this.handleForm} value={this.state.text} placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10" required></textarea>
                 <button type="submit">{lang === 'pl' ? 'Wyślij wiadomość' : 'Send message'}</button>
             </FormContainer>
         </div>);

@@ -55,6 +55,17 @@ class IndexPage extends React.Component {
         en: ['RWD issues', 'BEM Methodology', 'Work on MAacOS / Windows operating systems', 'English B2+']
 
       },
+      formMessage: {
+        pl: {
+          formMessageSuccess: 'Dziękuję, wiadomość wysłana poprawnie.',
+          formMessageError: 'Błąd wysyłania wiadomości. Proszę spróbować później.',
+        },
+        en: {
+          formMessageSuccess: 'Thank You. Message sent.',
+          formMessageError: 'Error. Please try again later.',
+        }
+
+      }
 
     };
 
@@ -77,16 +88,24 @@ class IndexPage extends React.Component {
   handleProjectsNonCommercial = (e) => {
     e.preventDefault();
     this.setState({ projects: 'nonCommercial' });
-
-
   }
 
-  handleFormMessageOpen = (e) => {
-    e.preventDefault();
+  handleFormMessageOpen = (type) => {
+
+    let lang = this.state.lang;
+    let messageContent;
+
+    if (lang === 'pl') {
+      type === 'success' ? messageContent = this.state.formMessage.pl.formMessageSuccess : messageContent = this.state.formMessage.pl.formMessageError;
+    } else if (lang === 'en') {
+      type === 'success' ? messageContent = this.state.formMessage.en.formMessageSuccess : messageContent = this.state.formMessage.en.formMessageError;
+    }
     document.querySelector('#form-message').classList.add("active-message");
+    document.querySelector('#message-content').innerHTML = messageContent;
+
+
   }
   handleFormMessageClose = () => {
-    // document.querySelector('#form-message').style.display = 'none';
     document.querySelector('#form-message').classList.remove("active-message");
   }
 
@@ -104,11 +123,11 @@ class IndexPage extends React.Component {
           <MenuDesktop handleLang={this.handleLang} lang={this.state.lang} />
           <MenuIcon handleOpenMenu={this.handleOpenMenu} />
           <MenuMobile handleCloseMenu={this.handleCloseMenu} handleLang={this.handleLang} />
-          <FormMessage handleMessage={this.handleFormMessageClose} />
+          <FormMessage handleMessage={this.handleFormMessageClose} formMessage={this.state.formMessage} lang={this.state.lang} />
           <About text={this.state.aboutText} lang={this.state.lang} />
           <Skills lang={this.state.lang} others={this.state.others} />
           <Portfolio lang={this.state.lang} projects={this.state.projects} handleCommercial={this.handleProjectsCommercial} handleNonCommercial={this.handleProjectsNonCommercial} /><br />
-          <Form lang={this.state.lang} handleMessage={this.handleFormMessageOpen} />
+          <Form lang={this.state.lang} handleMessage={this.handleFormMessageOpen} formMessage={this.state.formMessage} />
           <Footer />
         </GlobalContainer>
       </>
