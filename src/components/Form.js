@@ -159,8 +159,7 @@ class Form extends React.Component {
 
 
     handleOpen = () => {
-
-        this.state({
+        this.setState({
             name: '',
             email: '',
             subject: '',
