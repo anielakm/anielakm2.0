@@ -149,7 +149,7 @@ class Form extends React.Component {
         return (<div id="contact">
             <H2>{lang === "pl" ? 'Zapraszam do kontaktu' : 'Contact me'}</H2>
             <FormContainer
-                onSubmit={handleSubmit}
+                onSubmit={this.handleSubmit}
                 name="contact"
                 method="POST"
                 data-netlify="true"
