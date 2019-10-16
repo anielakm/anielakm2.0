@@ -188,7 +188,7 @@ class Form extends React.Component {
                 <input name="email" onChange={this.handleForm} type="email" value={this.state.email} placeholder="* E-mail" required />
                 <input name="subject" onChange={this.handleForm} type="text" value={this.state.subject} placeholder={lang === 'pl' ? "Temat" : "Subject"} />
                 <input name="firm" id="desktop" onChange={this.handleForm} value={this.state.firm} type="text" placeholder={lang === 'pl' ? "Firma" : "Firm"} />
-                <textarea name="message" onChange={this.handleForm} value={this.state.text} placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10" required></textarea>
+                <textarea name="message" onChange={this.handleForm} value={this.state.message} placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10" required></textarea>
                 <button type="submit">{lang === 'pl' ? 'Wyślij wiadomość' : 'Send message'}</button>
             </FormContainer>
         </div>);
