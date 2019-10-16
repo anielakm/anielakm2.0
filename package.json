@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Anielakm",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Junior Front-End Developer Portfolio",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Aniela Katana-Matłok <kontakt@anielakm.pl>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.28",
