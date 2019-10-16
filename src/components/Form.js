@@ -129,20 +129,36 @@ class Form extends React.Component {
 
     }
 
+    encode(data) {
+        return Object.keys(data)
+            .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+            .join('&')
+    }
+
     handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({
+            body: this.encode({
                 'form-name': form.getAttribute('name'),
-                ...state,
+                ...this.state,
             }),
         })
-            .then(() => this.props.handleMessage())
+            .then(response => response.redirected)
+            .then(response => !response ? this.handleOpen() : this.handleRecError())
             .catch((error) => alert(error))
     }
+
+
+    handleOpen = () => {
+        console.log('success')
+    }
+    handleRecError = () => {
+        console.log('error')
+    }
+
 
     render() {
         const { lang } = this.props;
