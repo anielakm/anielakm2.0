@@ -98,11 +98,8 @@ const Footer = () => (
     query {
         file(relativePath: {eq: "akm3.jpg"}) {
           childImageSharp {
-            fluid {
-              aspectRatio
-              base64
-              src
-              srcSet
+            fluid(maxWidth: 2992, maxHeight: 1661) {
+              ...GatsbyImageSharpFluid
             }
           }
         }

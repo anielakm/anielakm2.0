@@ -109,19 +109,44 @@ margin: 8% 0 4%;
 }
 `
 
-const Form = ({ lang, handleMessage }) => {
+class Form extends React.Component {
 
-    return (<div id="contact">
-        <H2>{lang === "pl" ? 'Zapraszam do kontaktu' : 'Contact me'}</H2>
-        <FormContainer onSubmit={handleMessage}>
-            <input type="text" placeholder={lang === "pl" ? "* Imię" : "* Name"} />
-            <input type="text" placeholder="* E-mail" />
-            <input type="text" placeholder={lang === 'pl' ? "Temat" : "Subject"} />
-            <input id="desktop" type="text" placeholder={lang === 'pl' ? "Firma" : "Firm"} />
-            <textarea name="" placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10"></textarea>
-            <button type="submit">{lang === 'pl' ? 'Wyślij wiadomość' : 'Send message'}</button>
-        </FormContainer>
-    </div>);
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            subject: '',
+            firm: '',
+            message: ''
+        }
+    }
+
+    handleForm = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({ [name]: value })
+
+    }
+
+
+    render() {
+        const { lang, handleMessage } = this.props;
+        return (<div id="contact">
+            <H2>{lang === "pl" ? 'Zapraszam do kontaktu' : 'Contact me'}</H2>
+            <FormContainer onSubmit={handleMessage} name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <input name="name" onChange={this.handleForm} type="text" value={this.state.name} placeholder={lang === "pl" ? "* Imię" : "* Name"} />
+                <input name="email" onChange={this.handleForm} type="email" value={this.state.email} placeholder="* E-mail" />
+                <input name="subject" onChange={this.handleForm} type="text" value={this.state.subject} placeholder={lang === 'pl' ? "Temat" : "Subject"} />
+                <input name="firm" id="desktop" onChange={this.handleForm} value={this.state.firm} type="text" placeholder={lang === 'pl' ? "Firma" : "Firm"} />
+                <textarea name="message" onChange={this.handleForm} value={this.state.text} placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10"></textarea>
+                <button type="submit">{lang === 'pl' ? 'Wyślij wiadomość' : 'Send message'}</button>
+            </FormContainer>
+        </div>);
+    }
+
+
 }
 
 export default Form;
