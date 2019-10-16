@@ -129,12 +129,32 @@ class Form extends React.Component {
 
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        const form = e.target
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encode({
+                'form-name': form.getAttribute('name'),
+                ...state,
+            }),
+        })
+            .then(() => this.props.handleMessage())
+            .catch((error) => alert(error))
+    }
 
     render() {
-        const { lang, handleMessage } = this.props;
+        const { lang } = this.props;
         return (<div id="contact">
             <H2>{lang === "pl" ? 'Zapraszam do kontaktu' : 'Contact me'}</H2>
-            <FormContainer onSubmit={handleMessage} name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <FormContainer
+                onSubmit={handleSubmit}
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+            >
                 <input type="hidden" name="form-name" value="contact" />
                 <input name="name" onChange={this.handleForm} type="text" value={this.state.name} placeholder={lang === "pl" ? "* Imię" : "* Name"} />
                 <input name="email" onChange={this.handleForm} type="email" value={this.state.email} placeholder="* E-mail" />
