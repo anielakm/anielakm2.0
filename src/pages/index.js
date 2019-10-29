@@ -10,6 +10,8 @@ import MenuIcon from '../components/MenuIcon'
 import MenuMobile from '../components/MenuMobile'
 import FormMessage from '../components/FormMessage'
 import MenuDesktop from "../components/MenuDesktop"
+import { Helmet } from "react-helmet"
+import Icon from '../images/ikonka.png'
 
 const Global = createGlobalStyle`
 body{
@@ -27,8 +29,6 @@ body{
     outline: none;
 }
 `;
-
-
 
 class IndexPage extends React.Component {
 
@@ -113,6 +113,10 @@ class IndexPage extends React.Component {
       <>
         <div>
           <SEO title="Home" />
+          <Helmet>
+            <meta property="og:image" content={Icon} />
+            <meta property="og:image:type" content="image/png" />
+          </Helmet>
           <Global />
           <MenuDesktop handleLang={this.handleLang} lang={this.state.lang} />
           <MenuIcon handleOpenMenu={this.handleOpenMenu} />
