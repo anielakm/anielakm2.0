@@ -114,7 +114,7 @@ class IndexPage extends React.Component {
         <div>
           <SEO title="Home" />
           <Helmet>
-            <meta property="og:image" content={Icon} />
+            <meta property="og:image" content={`https://anielakm.pl${Icon}`} />
             <meta property="og:image:type" content="image/png" />
           </Helmet>
           <Global />
