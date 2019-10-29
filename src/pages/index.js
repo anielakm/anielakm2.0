@@ -10,7 +10,6 @@ import MenuIcon from '../components/MenuIcon'
 import MenuMobile from '../components/MenuMobile'
 import FormMessage from '../components/FormMessage'
 import MenuDesktop from "../components/MenuDesktop"
-import styled from 'styled-components'
 
 const Global = createGlobalStyle`
 body{
@@ -29,12 +28,6 @@ body{
 }
 `;
 
-const GlobalContainer = styled.div`
-
-
-
-
-`;
 
 
 class IndexPage extends React.Component {
@@ -118,7 +111,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <>
-        <GlobalContainer>
+        <div>
           <SEO title="Home" />
           <Global />
           <MenuDesktop handleLang={this.handleLang} lang={this.state.lang} />
@@ -130,7 +123,7 @@ class IndexPage extends React.Component {
           <Portfolio lang={this.state.lang} projects={this.state.projects} handleCommercial={this.handleProjectsCommercial} handleNonCommercial={this.handleProjectsNonCommercial} /><br />
           <Form lang={this.state.lang} handleMessage={this.handleFormMessageOpen} formMessage={this.state.formMessage} />
           <Footer />
-        </GlobalContainer>
+        </div>
       </>
     )
   }

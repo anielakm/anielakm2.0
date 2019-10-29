@@ -80,14 +80,13 @@ cursor:pointer;
 const MenuDesktop = ({ handleLang, lang }) => {
     return (<Nav className="desktop-menu">
         <ul className="desktop-ul">
-            <li className="desktop-li"><AnchorLink href="#about">o mnie</AnchorLink></li>
-            <li className="desktop-li"><AnchorLink href="#skills">umiejętności</AnchorLink></li>
-            <li className="desktop-li"><AnchorLink href="#portfolio" >portfolio</AnchorLink></li>
-            <li className="desktop-li"><AnchorLink href="#contact">kontakt</AnchorLink></li>
+            <li className="desktop-li"><AnchorLink href="#about">{lang === 'en' ? 'about me' : 'o mnie'}</AnchorLink></li>
+            <li className="desktop-li"><AnchorLink href="#skills">{lang === 'en' ? 'skills' : 'umiejętności'}</AnchorLink></li>
+            <li className="desktop-li"><AnchorLink href="#portfolio" >{lang === 'en' ? 'portfolio' : 'portfolio'}</AnchorLink></li>
+            <li className="desktop-li"><AnchorLink href="#contact">{lang === 'en' ? 'contact' : 'kontakt'}</AnchorLink></li>
             <li className="desktop-li desktop-img" id="img1"><a href="https://github.com/anielakm" target="_blank"><img src={Git} alt="git" /></a></li>
             <li className="desktop-li desktop-img" id="img2"><a href="https://www.linkedin.com/in/aniela-katana-mat%C5%82ok-92a210181?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BmIbmJ%2BkkR6myNOHyCjLOMA%3D%3D" target="_blank"><img src={LinkedIn} alt="git" /></a></li>
             <li className="desktop-li"><Span active={lang === 'en'} onClick={() => handleLang('en')}>EN</Span>&nbsp;&nbsp;|&nbsp;&nbsp;<Span active={lang === 'pl'} onClick={() => handleLang('pl')}>PL</Span></li>
-
         </ul>
     </Nav>);
 }

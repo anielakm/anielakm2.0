@@ -98,17 +98,18 @@ const AboutContainer = styled.div`
       .about-title{
         
         .about-h1{
-          font-size:50px;
+          font-size:48px;
        }
         .about-h3{
-          font-size: 20px;
+          font-size: 16px;
+          letter-spacing:4px;
           }
       }
 
       .about-text-content{
 
-        padding: 0 14% 5% 13%;
-        font-size: 14px;
+        padding: 0 10% 4% 13%;
+        font-size: 12px;
         line-height: 16px;
         font-weight:500;
 
