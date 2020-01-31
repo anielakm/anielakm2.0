@@ -12,6 +12,8 @@ import FormMessage from '../components/FormMessage'
 import MenuDesktop from "../components/MenuDesktop"
 import { Helmet } from "react-helmet"
 import Icon from '../images/ikonka.png'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Global = createGlobalStyle`
 body{
@@ -44,7 +46,7 @@ class IndexPage extends React.Component {
 
       others: {
 
-        pl: ['Zagadnienia RWD', 'Metodyka BEM', 'Praca z systemami MAacOS / Windows', 'Język Angielski B2+'],
+        pl: ['Zagadnienia RWD', 'Metodyka BEM', 'Praca z systemami Mac OS / Windows', 'Język Angielski B2+'],
         en: ['RWD issues', 'BEM Methodology', 'Work on MAacOS / Windows operating systems', 'English B2+']
 
       },
@@ -108,7 +110,10 @@ class IndexPage extends React.Component {
 
   }
 
+
+
   render() {
+    AOS.init();
     return (
       <>
         <div>

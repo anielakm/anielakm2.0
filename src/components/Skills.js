@@ -52,7 +52,7 @@ const Skills = ({ lang, others }) => {
 
     return (<div id="skills">
         <Technologies lang={lang} />
-        <ProgramsAndOthers>
+        <ProgramsAndOthers data-aos="fade-right">
             <div className="programsAndOthers-rectangle"></div>
             <Programs lang={lang} />
             <Others lang={lang} others={others} />

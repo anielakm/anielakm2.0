@@ -211,7 +211,7 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
 
 
   return (
-    <Container id="portfolio">
+    <Container id="portfolio" data-aos="fade-up" data-aos-duration="2000">
 
       <H2>Portfolio</H2>
       <Button checked={projects === 'commercial'} onClick={handleCommercial}>{lang === 'pl' ? 'projekty komercyjne' : 'commercial projects'}</Button>

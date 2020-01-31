@@ -133,10 +133,10 @@ const Technologies = ({ lang }) => {
       }
     }   
       `)
-  return (<Container className="technologies">
+  return (<Container className="technologies" data-aos="fade-left" >
     <div className="technologies-content">
 
-      <Text className="technologies-text">
+      <Text className="technologies-text" >
         <h4 className="technologies-title">{lang === 'pl' ? 'Technologie, których używam przy tworzeniu stron:' : 'Technologies, which I use creating web apps'}</h4>
         <ul className="technologies-text-content">
           <li>HTML5</li>

@@ -105,7 +105,6 @@ const Others = ({ lang, others }) => {
       <Text >
         <h4>{lang === 'pl' ? 'Moje pozostałe umiejętności:' : 'My other skills:'}</h4>
         <ul>
-
           {lang === 'pl' ? (others.pl.map(item => <li>{item}</li>)) : (others.en.map(item => <li>{item}</li>))}
         </ul>
       </Text>
