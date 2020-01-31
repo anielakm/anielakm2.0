@@ -110,10 +110,20 @@ class IndexPage extends React.Component {
 
   }
 
+  componentDidMount() {
+    const AOS = require('aos');
+    this.aos = AOS
+    this.aos.init()
+  }
+
+  componentDidUpdate() {
+    this.aos.refresh()
+  }
+
 
 
   render() {
-    AOS.init();
+
     return (
       <>
         <div>
