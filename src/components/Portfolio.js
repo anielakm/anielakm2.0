@@ -62,7 +62,7 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
   const {
     ewi,
     chelminska,
-    jawar,
+    niemyjscy,
     ngn,
     akm,
     memory
@@ -93,7 +93,7 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
             }
           }
 
-          jawar: file(relativePath: {eq: "jawar.png"}) {
+          niemyjscy: file(relativePath: {eq: "niemyjscy.png"}) {
             childImageSharp {
               fluid {
                 aspectRatio
@@ -167,11 +167,11 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
 
     },
     {
-      id: 'jawar',
-      img: jawar.childImageSharp.fluid,
-      title: 'Jawar - strona internetowa firmy Jawar zajmującej się sprzedażą nieruchomości.',
-      content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
-      url: 'http://nieruchomoscijawar.pl/',
+      id: 'niemyjscy',
+      img: niemyjscy.childImageSharp.fluid,
+      title: 'Biorezonans ursynów - strona internetowa gabinetu biorezonansu.',
+      content: 'Technologie wykorzystane do stworzenia strony: HTML, SASS, Webpack, WP. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Figma.',
+      url: 'https://biorezonans-ursynow.pl/',
       urlGit: '',
       isCommercial: true,
 
@@ -182,9 +182,9 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
     id: 'ngn',
     img: ngn.childImageSharp.fluid,
     title: 'NGNails - blog o tematyce kosmetycznej.',
-    content: 'Blog oparty na systemie Wordpress. Technologie wykorzystane w projekcie: HTML, CSS, Bootstrap, PHP. Projekt strony został zaprojektowany i stworzony w programie Adobe Photoshop.',
-    url: 'http://ngnails.pl/',
-    urlGit: '',
+    content: 'Technologie wykorzystane w projekcie: Gatsby, Styled Components, WordPress (headless CMS). Projekt strony został zaprojektowany i stworzony w programie Adobe Photoshop.',
+    url: 'https://ngnails.pl/',
+    urlGit: 'https://github.com/anielakm/NGNails',
     isCommercial: false,
 
   }, {
@@ -202,7 +202,7 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
     img: memory.childImageSharp.fluid,
     title: 'Fruits & Vegetables - Gra typu memory napisana w języku Javascript.',
     content: 'Prosta gra polegająca na zapamiętywaniu i odkrywaniu takich samych kart. Podczas rozgrywki odliczany jest czas, ilość wykonanych ruchów oraz ilość odsłoniętych par. Wykorzystane technologie: HTML, CSS, Bootstrap, JavaScript. Projekt strony został zaprojektowany i stworzony w programie Adobe Photoshop.',
-    url: 'http://htmlpreview.github.io/?https://github.com/anielakm/memoryGame/blob/master/index.html',
+    url: 'http://memory.anielakm.webd.pro/',
     urlGit: 'https://github.com/anielakm/memoryGame',
     isCommercial: false,
 

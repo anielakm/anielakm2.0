@@ -118,11 +118,11 @@ const Footer = () => (
           <H2>Aniela Katana-Matłok</H2>
 
           <a href="https://www.linkedin.com/in/aniela-katana-mat%C5%82ok-92a210181?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BmIbmJ%2BkkR6myNOHyCjLOMA%3D%3D" target="_blank">
-            <img className="icon" alt="linkedin" src={LinkedIn} />
+            <img className="icon" alt="linkedin" loading="eager" src={LinkedIn} />
           </a>
 
           <a href="https://github.com/anielakm" target="_blank">
-            <img className="icon" alt="git" src={Git} />
+            <img className="icon" alt="git" loading="eager" src={Git} />
           </a>
           <p>Template by Aniela Katana-Matłok. All rights reserved. </p>
         </FooterContainer>);

@@ -7,7 +7,7 @@ text-align:center;
 font-weight:200;
 font-size:14px;
 letter-spacing:1px;
-margin:10% 0 5%;
+margin:8% 0 2.5%;
 
 @media(min-width:768px){
     font-size:16px;
@@ -19,99 +19,27 @@ margin:10% 0 5%;
 }
 `;
 
-const FormContainer = styled.form`
+const ContactContainer = styled.div`
 
-padding:0 10%;
-text-align:center;
-font-size:12px;
-
-@media(min-width:1220px){
-    width:90%;
-margin:auto;
-}
-
-input{
-    width:100%;
-    background-color:transparent;
-    border-bottom: 1px solid lightgray;
-   border-top:0;
-   border-left:0;
-   border-right:0;
-   margin: 4% 0;
-   font-family: ${theme.fonts.lato};
-   padding: 4%;
- 
-
-    &#desktop{
-        display:none;
-    }
-
-   &:-internal-autofill-selected{
-        background-color:${theme.colors.pistachio};
-        opacity:0.5;
-        color:black;
-    }
-
-   @media(min-width:768px){
-       width:48%;
-       margin: 0 1%;
-       display:inline-block;
-
-       &#desktop{
-        display:inline-block;
-    }
-   }
-
-   @media(min-width:1220px){
-    margin: 2% 1%;
-    padding: 1%;
-    font-size:14px;
-    color:rgba(0,0,0,0.65);
-    letter-spacing:1px;
-   }
-
-}
-textarea{
-    
-    width:100%;
-    padding:4%;
-    margin: 4% 0;
-    border: 1px solid lightgray;
-    background-color:transparent;
-
-    @media(min-width:1220px){
-    padding:1%;
-    margin: 4% 0;
-    height:30vh;
-    font-size:14px;
-    color:rgba(0,0,0,0.65);
-
-    }
-}
-button{
-    cursor: pointer;
-    text-transform:lowercase;
-    background-color:white;
+text-align: center;
+a {
+    color: rgba(0,0,0,.65);
+    text-decoration: none;
+    font-size:13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     font-family: ${theme.fonts.lato};
-    color: gray;
-    letter-spacing:2px;
-    font-size:9px;
-    border:0;
-    padding:6% 14%;
-display:inline-block;
-margin: 8% 0 4%;
+    background-color: ${theme.colors.pistachio};
+    padding: 12px 30px;
+    box-shadow: 3px 3px 5px rgb(0,0,0,.03);
+    transition: all .3s;
 
-@media(min-width:768px){
-    font-size:10px;
-    padding:3% 6%;
-}
+    &:hover {
+        /* opacity: .8; */
+        background-color: ${theme.colors.baseBeige}
+    }
 
-@media(min-width:1220px){
-    font-size:12px;
-    padding:1.5% 4%;
-    margin-top: 3%;
 
-}
 }
 `
 
@@ -119,79 +47,20 @@ class Form extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            name: '',
-            email: '',
-            subject: '',
-            firm: '',
-            message: ''
-        }
-    }
-
-    handleForm = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        this.setState({ [name]: value })
-
-    }
-
-    encode(data) {
-        return Object.keys(data)
-            .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-            .join('&')
-    }
-
-    handleSubmit = (e) => {
-        e.preventDefault()
-        const form = e.target
-        fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: this.encode({
-                'form-name': form.getAttribute('name'),
-                ...this.state,
-            }),
-        })
-            .then(response => response.redirected)
-            .then(response => !response ? this.handleOpen() : this.handleRecError())
-            .catch((error) => alert(error))
-    }
-
-
-    handleOpen = () => {
-        this.setState({
-            name: '',
-            email: '',
-            subject: '',
-            firm: '',
-            message: ''
-        }, this.props.handleMessage('success'))
-    }
-    handleRecError = () => {
-        this.props.handleMessage('error');
     }
 
 
     render() {
         const { lang } = this.props;
-        return (<div id="contact" data-aos="fade-up" data-aos-duration="2000">
+        return (
+        <ContactContainer id="contact" >
+        {/* <ContactContainer id="contact" data-aos="fade-up" data-aos-duration="2000"> */}
             <H2>{lang === "pl" ? 'Zapraszam do kontaktu' : 'Contact me'}</H2>
-            <FormContainer
-                onSubmit={this.handleSubmit}
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-            >
-                <input type="hidden" name="form-name" value="contact" />
-                <input name="name" onChange={this.handleForm} type="text" value={this.state.name} placeholder={lang === "pl" ? "* Imię" : "* Name"} required />
-                <input name="email" onChange={this.handleForm} type="email" value={this.state.email} placeholder="* E-mail" required />
-                <input name="subject" onChange={this.handleForm} type="text" value={this.state.subject} placeholder={lang === 'pl' ? "Temat" : "Subject"} />
-                <input name="firm" id="desktop" onChange={this.handleForm} value={this.state.firm} type="text" placeholder={lang === 'pl' ? "Firma" : "Firm"} />
-                <textarea name="message" onChange={this.handleForm} value={this.state.message} placeholder={lang === 'pl' ? "* Treść wiadomości ..." : "* Message ..."} id="" cols="30" rows="10" required></textarea>
-                <button type="submit">{lang === 'pl' ? 'Wyślij wiadomość' : 'Send message'}</button>
-            </FormContainer>
-        </div>);
+           <div>
+               <a href="mailto: kontakt@anielakm.pl">kontakt@anielakm.pl</a>
+               
+           </div>
+        </ContactContainer>);
     }
 
 

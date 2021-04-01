@@ -82,7 +82,7 @@ const AboutContainer = styled.div`
         padding: 0 12% 5% 10%;
     font-weight: 400;
     font-size: 11px;
-    line-height: 16px;
+  
 
         
       }
@@ -110,9 +110,7 @@ const AboutContainer = styled.div`
 
         padding: 0 10% 4% 13%;
         font-size: 12px;
-        line-height: 16px;
         font-weight:500;
-
         
       }
   }
@@ -149,7 +147,7 @@ const AboutText = styled.div`
     font-family:'Lato', sans-serif;
     font-weight:200;
     font-size:10px;
-    line-height:12px;
+    line-height:1.8em;
     padding:0 8%;
     text-align:left;
   }
@@ -172,7 +170,7 @@ const About = ({ text, lang }) => {
     `)
   return (
     <AboutContainer id="about" >
-      <Img className="about-img" fluid={data.file.childImageSharp.fluid} alt="Akm About" />
+      <Img className="about-img" fluid={data.file.childImageSharp.fluid} alt="Akm About" loading="eager"/>
       <AboutText className="about-text"> <div className="about-title"><h1 className="about-h1">Aniela Katana-Matłok</h1><h3 className="about-h3">junior front-end developer</h3></div><p className="about-text-content">{lang === 'pl' ? text.pl : text.en}</p></AboutText>
 
 

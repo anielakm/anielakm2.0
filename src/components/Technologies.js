@@ -145,6 +145,7 @@ const Technologies = ({ lang }) => {
           <li>Bootstrap/Skeleton</li>
           <li>React.js</li>
           <li>Gatsby.js</li>
+          <li>WordPress / PHP {lang === 'pl' ? '(podstawy)':'(basics)'}</li>
         </ul>
       </Text>
       <StyledImg className="technologies-img" fluid={data.file.childImageSharp.fluid} />

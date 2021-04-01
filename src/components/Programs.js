@@ -115,6 +115,7 @@ const Programs = ({ lang }) => {
           <li>Adobe Photoshop</li>
           <li>Adobe Illustrator</li>
           <li>Adobe Lightroom</li>
+          <li>Figma</li>
         </ul>
       </Text>
     </Inner>
