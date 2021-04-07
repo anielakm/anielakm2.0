@@ -171,7 +171,7 @@ const About = ({ text, lang }) => {
   return (
     <AboutContainer id="about" >
       <Img className="about-img" fluid={data.file.childImageSharp.fluid} alt="Akm About" loading="eager"/>
-      <AboutText className="about-text"> <div className="about-title"><h1 className="about-h1">Aniela Katana-Matłok</h1><h3 className="about-h3">junior front-end developer</h3></div><p className="about-text-content">{lang === 'pl' ? text.pl : text.en}</p></AboutText>
+      <AboutText className="about-text"> <div className="about-title"><h1 className="about-h1">Aniela Katana-Matłok</h1><h3 className="about-h3">front-end developer</h3></div><p className="about-text-content" dangerouslySetInnerHTML={{__html: lang === 'pl' ? text.pl : text.en }}></p></AboutText>
 
 
     </AboutContainer>
