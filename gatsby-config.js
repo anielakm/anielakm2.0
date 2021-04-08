@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Anielakm`,
-    description: `Aniela Katana Matłok | Junior Front-End Developer Portfolio`,
+    description: `Aniela Katana Matłok | Front-End Developer Portfolio`,
     author: `@anielakm`,
     image: "../src/images/ikonka.png"
   },
