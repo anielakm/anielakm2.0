@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
       lang: 'pl',
       aboutText: {
         pl: 'W trakcie mojej dotychczasowej praktyki jako front-end developer miałam przyjemność realizować m.in. projekty związane z tworzeniem blogów, stron firmowych, stron typu landing page, czy też sklepów internetowych. Zależy mi na rozwoju w najnowszych technologiach frontendowych, dlatego też liczę na nawiązanie długofalowej współpracy w tym zakresie.',
-        en: `During my practice as a front-end developer, I had the pleasure to implement among projects related to the creation of blogs, company websites, landing pages or online stores. I care about development in the latest frontend technologies, which is why I hope to establish long-term cooperation in this area.`,
+        en: `During my current practice as a front-end developer I had the pleasure to implement projects related to the creation of blogs, corporate websites, landing pages and online stores. I am keen on improving my skills in the latest frontend technologies, therefore I am looking forward to long-term cooperation in this field.`,
       },
 
       others: {
