@@ -109,7 +109,7 @@ const AboutContainer = styled.div`
       .about-text-content{
 
         padding: 0 10% 4% 13%;
-        font-size: 12px;
+        font-size: 16px;
         font-weight:500;
         
       }
@@ -146,7 +146,7 @@ const AboutText = styled.div`
   p{
     font-family:'Lato', sans-serif;
     font-weight:200;
-    font-size:10px;
+    font-size:12px;
     line-height:1.8em;
     padding:0 8%;
     text-align:left;
