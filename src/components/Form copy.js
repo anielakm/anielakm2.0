@@ -174,7 +174,7 @@ class Form extends React.Component {
 
     render() {
         const { lang } = this.props;
-        return (<div id="contact" data-aos="fade-up" data-aos-duration="2000">
+        return (<div id="contact" data-aos="fade-up">
             <H2>{lang === "pl" ? 'Zapraszam do kontaktu' : 'Contact me'}</H2>
             <FormContainer
                 onSubmit={this.handleSubmit}

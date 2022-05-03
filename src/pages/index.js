@@ -8,12 +8,11 @@ import Footer from '../components/Footer'
 import { createGlobalStyle } from "styled-components";
 import MenuIcon from '../components/MenuIcon'
 import MenuMobile from '../components/MenuMobile'
-import FormMessage from '../components/FormMessage'
 import MenuDesktop from "../components/MenuDesktop"
 import { Helmet } from "react-helmet"
 import Icon from '../images/ikonka.png'
-import AOS from 'aos';
 import 'aos/dist/aos.css';
+import styled from "styled-components"
 
 const Global = createGlobalStyle`
 body{
@@ -40,14 +39,14 @@ class IndexPage extends React.Component {
       projects: 'commercial',
       lang: 'pl',
       aboutText: {
-        pl: 'W trakcie mojej dotychczasowej praktyki jako front-end developer miałam przyjemność realizować m.in. projekty związane z&nbsp;tworzeniem blogów, stron firmowych, stron typu landing page, czy też sklepów internetowych. ',
-        en: `During my current practice as&nbsp;a&nbsp;front-end developer I&nbsp;had the&nbsp;pleasure to&nbsp;implement projects related to&nbsp;the creation of blogs, corporate websites, landing pages and online stores.`,
+        pl: 'W trakcie mojej dotychczasowej praktyki jako front-end developer miałam przyjemność realizować m.in. projekty związane z&nbsp;tworzeniem blogów, stron firmowych, stron typu landing page, czy też sklepów internetowych. W ostatnim czasie moja praca skupia się głównie na utrzymaniu i rozwoju jednego, większego projektu dla zagranicznego klienta.',
+        en: `During my curent pracce as a front-end developer I had the pleasure to implement projects related to the creation of blogs, corporate websites, landing pages and online stores. Recently, my work is focused mainly on maintaining and developing one, bigger project for a foreignclient.`,
       },
 
       others: {
 
-        pl: ['Zagadnienia RWD', 'Metodyka BEM', 'Praca z systemami Mac OS / Windows', 'Język Angielski B2+'],
-        en: ['RWD issues', 'BEM Methodology', 'Work on MAacOS / Windows operating systems', 'English B2+']
+        pl: ['Zagadnienia RWD', 'Metodyka BEM', 'Praca z systemami Mac OS / Windows / Linux', 'Język Angielski B2+'],
+        en: ['RWD issues', 'BEM Methodology', 'Work on MAacOS / Windows / Linux operating systems', 'English B2+']
 
       },
     
@@ -97,8 +96,7 @@ class IndexPage extends React.Component {
   render() {
 
     return (
-      <>
-        <div>
+        <PageWrapper>
           <SEO title="Home" />
           <Helmet>
             <meta property="og:image" content={`https://anielakm.pl${Icon}`} />
@@ -114,11 +112,17 @@ class IndexPage extends React.Component {
           <Portfolio lang={this.state.lang} projects={this.state.projects} handleCommercial={this.handleProjectsCommercial} handleNonCommercial={this.handleProjectsNonCommercial} /><br />
           <Form lang={this.state.lang}/>
           <Footer />
-        </div>
-      </>
+        </PageWrapper>
     )
   }
 
 }
 
 export default IndexPage
+
+
+
+const PageWrapper = styled.div`
+
+overflow: hidden ;
+`

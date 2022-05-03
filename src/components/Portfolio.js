@@ -63,6 +63,7 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
     ewi,
     chelminska,
     niemyjscy,
+    sg,
     ngn,
     akm,
     memory
@@ -94,6 +95,18 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
           }
 
           niemyjscy: file(relativePath: {eq: "niemyjscy.png"}) {
+            childImageSharp {
+              fluid {
+                aspectRatio
+                base64
+                sizes
+                src
+                srcSet
+              }
+            }
+          }
+
+          sg: file(relativePath: {eq: "sg.png"}) {
             childImageSharp {
               fluid {
                 aspectRatio
@@ -148,20 +161,11 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
 
   const commercialProjects = [
     {
-      id: 'ewi',
-      img: ewi.childImageSharp.fluid,
-      title: 'EWI - strona internetowa firmy EWI zajmującej się sprzedażą ubrań i pościeli dla niemowląt.',
-      content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
-      url: 'http://ewiradom.pl/',
-      urlGit: '',
-      isCommercial: true,
-    },
-    {
-      id: 'chelminska',
-      img: chelminska.childImageSharp.fluid,
-      title: 'Chełmińska - strona internetowa pierkani i cukierni Chełmińska.',
-      content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
-      url: 'http://www.chelminska.pl/',
+      id: 'system-gaz',
+      img: sg.childImageSharp.fluid,
+      title: 'System Gaz - strona firmowa.',
+      content: 'Strona oparta na technologii Gatsby.js. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Figma.',
+      url: 'https://system-gaz.pl/',
       urlGit: '',
       isCommercial: true,
 
@@ -175,28 +179,49 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
       urlGit: '',
       isCommercial: true,
 
+    },
+    
+    {
+      id: 'chelminska',
+      img: chelminska.childImageSharp.fluid,
+      title: 'Chełmińska - strona internetowa pierkani i cukierni Chełmińska.',
+      content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
+      url: 'http://www.chelminska.pl/',
+      urlGit: '',
+      isCommercial: true,
+    },
+    {
+      id: 'ewi',
+      img: ewi.childImageSharp.fluid,
+      title: 'EWI - strona internetowa firmy EWI zajmującej się sprzedażą ubrań i pościeli dla niemowląt.',
+      content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
+      url: 'http://ewiradom.pl/',
+      urlGit: '',
+      isCommercial: true,
     }
   ]
 
-  const nonCommercialProjects = [{
-    id: 'ngn',
-    img: ngn.childImageSharp.fluid,
-    title: 'NGNails - blog o tematyce kosmetycznej.',
-    content: 'Technologie wykorzystane w projekcie: Gatsby, Styled Components, WordPress (headless CMS). Projekt strony został zaprojektowany i stworzony w programie Adobe Photoshop.',
-    url: 'https://ngnails.pl/',
-    urlGit: 'https://github.com/anielakm/NGNails',
-    isCommercial: false,
+  const nonCommercialProjects = [
+  //   {
+  //   id: 'ngn',
+  //   img: ngn.childImageSharp.fluid,
+  //   title: 'NGNails - blog o tematyce kosmetycznej.',
+  //   content: 'Technologie wykorzystane w projekcie: Gatsby, Styled Components, WordPress (headless CMS). Projekt strony został zaprojektowany i stworzony w programie Adobe Photoshop.',
+  //   url: 'https://ngnails.pl/',
+  //   urlGit: 'https://github.com/anielakm/NGNails',
+  //   isCommercial: false,
 
-  }, {
-    id: 'akm 1.0',
-    img: akm.childImageSharp.fluid,
-    title: 'Anielakm 1.0 - strona internetowa portfolio.',
-    content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
-    url: '',
-    urlGit: 'https://github.com/anielakm/anielakm',
-    isCommercial: false,
+  // }, 
+  // {
+  //   id: 'akm 1.0',
+  //   img: akm.childImageSharp.fluid,
+  //   title: 'Anielakm 1.0 - strona internetowa portfolio.',
+  //   content: 'Technologie wykorzystane do stworzenia strony: Yeoman, Gulp, Bower, HTML, SASS, Bootstrap. Strona jest dostosowana do wyświetlania zarowno na małych jak i dużych urządzeniach (spełnia standardy RWD). Projekt witryny został zaprojektowany i stworzony w programie Adobe Photoshop.',
+  //   url: '',
+  //   urlGit: 'https://github.com/anielakm/anielakm',
+  //   isCommercial: false,
 
-  },
+  // },
   {
     id: 'memory',
     img: memory.childImageSharp.fluid,
@@ -211,7 +236,7 @@ const Portfolio = ({ lang, projects, handleCommercial, handleNonCommercial }) =>
 
 
   return (
-    <Container id="portfolio" data-aos="fade-up" data-aos-duration="2000">
+    <Container id="portfolio" data-aos="fade-up" >
 
       <H2>Portfolio</H2>
       <Button checked={projects === 'commercial'} onClick={handleCommercial}>{lang === 'pl' ? 'projekty komercyjne' : 'commercial projects'}</Button>

@@ -49,10 +49,17 @@ const Container = styled.div`
     padding-right:4%;
 
   
-    .technologies-text-content{font-size:13px;
-    li{
-      margin:  2% 0;
-    }}
+    .technologies-text-content{
+      font-size:13px;
+
+      
+      li{
+        margin:  2% 0;
+        span {
+        font-size: 12px;
+      } 
+      }
+    }
   }
 }
 }
@@ -77,7 +84,7 @@ padding-right:3%;
 text-align:right;
 
 @media(min-width:1220px){
-  padding: 0 10%;
+  padding: 0 10% 0 5%;
     }
 
 .technologies-title{
@@ -112,6 +119,10 @@ text-align:right;
       font-size: 18px;
     line-height: 26px;
     font-weight: 200;
+    
+    span {
+      font-size: 15px;
+    }
     }
 }
 
@@ -139,13 +150,14 @@ const Technologies = ({ lang }) => {
       <Text className="technologies-text" >
         <h4 className="technologies-title">{lang === 'pl' ? 'Technologie, których używam przy tworzeniu stron:' : 'Technologies, which I use creating web apps'}</h4>
         <ul className="technologies-text-content">
-          <li>HTML5</li>
-          <li>CSS3/SASS</li>
-          <li>JavaScript(ES6)</li>
-          <li>Bootstrap/Skeleton</li>
-          <li>React.js</li>
-          <li>Gatsby.js</li>
-          <li>WordPress / PHP {lang === 'pl' ? '(podstawy)':'(basics)'}</li>
+          <li>HTML5, CSS3/SASS, JavaScript&nbsp;(ES6)</li>
+          <li>Bootstrap</li>
+          <li>React <span>(Gatsby.js/Next.js)</span></li>
+          <li>Vue.js</li>
+          <li>Wordpress <br/><span>{lang === 'pl' ? '(podstawy PHP, wtyczki: ACF, Woocommerce)':'(PHP basics, plugins: ACF, Woocommerce)'}</span></li>
+          <li>Angular <span>{lang === 'pl' ? '(podstawy)':'(basics)'}</span></li>
+          <li>React Native <span>{lang === 'pl' ? '(podstawy)':'(basics)'}</span></li>
+          <li>Typescript <span>{lang === 'pl' ? '(podstawy)':'(basics)'}</span></li>
         </ul>
       </Text>
       <StyledImg className="technologies-img" fluid={data.file.childImageSharp.fluid} />
