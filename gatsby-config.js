@@ -16,7 +16,19 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Defaults used for gatsbyImageData and StaticImage
+        defaults: {},
+        // Set to false to allow builds to continue on image errors
+        failOnError: false,
+        // deprecated options and their defaults:
+        base64Width: 20,
+        stripMetadata: true,
+        defaultQuality: 50,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
